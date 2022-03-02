@@ -21,7 +21,7 @@
       >
         <v-list-item
           v-for="(item, i) in items"
-          :key="i"
+          :key="i" :to="item.link" link
         >
           <v-list-item-icon>
             <v-icon v-text="item.icon"></v-icon>
@@ -41,7 +41,9 @@
     </v-app-bar>
 
     <v-main>
-      <!--  -->
+      <router-view>
+
+      </router-view>
     </v-main>
   </v-app>
 </template>
