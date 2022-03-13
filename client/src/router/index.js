@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import AddPost from '../views/AddPost'
+import Post from '../views/Post.vue';
+import EditPost from '../views/EditPost.vue';
 import Home from '../views/Home'
 import About from '../views/About'
 import store from '../Store/store'
@@ -17,6 +19,16 @@ const routes = [
     path: '/about',
     name: 'about',
     component: About,
+  },
+  {
+    path: '/post/:id',
+    name: 'post',
+    component: Post,
+  },
+  {
+    path: '/edit-post/:id',
+    name: 'edit-post',
+    component: EditPost,
   },
   {
     path: '/add-post',
@@ -58,21 +70,21 @@ const router = new VueRouter({
 })
 
 router.beforeEach((to, from, next) => {
-  if(to.matched.some(record => record.meta.requiresAuth)){
-    if(!store.getters.isLoggedIn){
+  if (to.matched.some(record => record.meta.requiresAuth)) {
+    if (!store.getters.isLoggedIn) {
       //Redirect to the Login Page
       next('/login');
-    } else{
+    } else {
       next();
     }
-  } else if(to.matched.some(record => record.meta.requiresGuest)){
-    if(store.getters.isLoggedIn){
+  } else if (to.matched.some(record => record.meta.requiresGuest)) {
+    if (store.getters.isLoggedIn) {
       //Redirect to the Login Page
       next('/profile');
-    } else{
+    } else {
       next();
     }
-  } else{
+  } else {
     next()
   }
 })
