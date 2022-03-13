@@ -19,7 +19,7 @@
                         <br>
                         <input type="submit" class="btn btn-outline-primary" value="Login">
                         &nbsp;&nbsp;&nbsp;&nbsp;
-                        <router-link to="/register" class="card-link">Don't have an account? Register Here!</router-link>
+                        <router-link to="/register" class="card-link">Don't have an account?</router-link>
                     </form>
                 </div>
             </div>

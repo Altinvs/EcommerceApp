@@ -87,6 +87,17 @@
         </v-list-item>
       </router-link>
 
+      <router-link to="/register" style="text-decoration: none; color: inherit;">
+        <v-list-item>
+          <v-list-item-icon>
+            <v-icon>mdi-account</v-icon>
+          </v-list-item-icon>
+          <v-list-item-content>
+            <v-list-item-title>Register</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+      </router-link>
+
       <router-link to="/login" style="text-decoration: none; color: inherit;">
         <v-list-item>
           <v-list-item-icon>
