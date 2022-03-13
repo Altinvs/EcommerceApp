@@ -21,21 +21,96 @@
       <v-list-item-group
         color="primary"
       >
-        <v-list-item
-          v-for="(item, i) in items"
-          :key="i" :to="item.link" link
-        >
+        <router-link to="/" style="text-decoration: none; color: inherit;">
+        <v-list-item>
           <v-list-item-icon>
-            <v-icon v-text="item.icon"></v-icon>
+            <v-icon>mdi-newspaper</v-icon>
           </v-list-item-icon>
           <v-list-item-content>
-            <v-list-item-title v-text="item.title"></v-list-item-title>
+            <v-list-item-title router-link="/">Home</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
+      </router-link>  
+
+      <router-link to="/about" style="text-decoration: none; color: inherit;">
+        <v-list-item>
+          <v-list-item-icon>
+            <v-icon>mdi-help-box</v-icon>
+          </v-list-item-icon>
+          <v-list-item-content>
+            <v-list-item-title>About</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+      </router-link>
+
+      <router-link to="/contact-us" style="text-decoration: none; color: inherit;">
+        <v-list-item>
+          <v-list-item-icon>
+            <v-icon>mdi-application-edit-outline</v-icon>
+          </v-list-item-icon>
+          <v-list-item-content>
+            <v-list-item-title>Contact Us</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+      </router-link>
+
+      <router-link to="/profile" style="text-decoration: none; color: inherit;">
+        <v-list-item>
+          <v-list-item-icon>
+            <v-icon>mdi-account-details</v-icon>
+          </v-list-item-icon>
+          <v-list-item-content>
+            <v-list-item-title>Profile</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+      </router-link>
+
+      <router-link to="/add-post" style="text-decoration: none; color: inherit;">
+        <v-list-item>
+          <v-list-item-icon>
+            <v-icon>mdi-note-plus</v-icon>
+          </v-list-item-icon>
+          <v-list-item-content>
+            <v-list-item-title>Add Post</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+      </router-link>
+
+      <router-link to="/dashboard" style="text-decoration: none; color: inherit;">
+        <v-list-item>
+          <v-list-item-icon>
+            <v-icon>mdi-application</v-icon>
+          </v-list-item-icon>
+          <v-list-item-content>
+            <v-list-item-title>Dashboard</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+      </router-link>
+
+      <router-link to="/login" style="text-decoration: none; color: inherit;">
+        <v-list-item>
+          <v-list-item-icon>
+            <v-icon>mdi-account</v-icon>
+          </v-list-item-icon>
+          <v-list-item-content>
+            <v-list-item-title>Login</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+      </router-link>
+
+      <router-link to="/logout"  style="text-decoration: none; color: inherit;">
+        <v-list-item @click.prevent="logoutUser">
+          <v-list-item-icon>
+            <v-icon>mdi-account-off</v-icon>
+          </v-list-item-icon>
+          <v-list-item-content>
+            <v-list-item-title>Logout</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+      </router-link>
       </v-list-item-group>
     </v-list>
     </v-navigation-drawer>
-    </v-card>
 
     <v-app-bar app>
       <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
