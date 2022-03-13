@@ -24,7 +24,7 @@
         <router-link to="/" style="text-decoration: none; color: inherit;">
         <v-list-item>
           <v-list-item-icon>
-            <v-icon>mdi-newspaper</v-icon>
+            <v-icon>mdi-home</v-icon>
           </v-list-item-icon>
           <v-list-item-content>
             <v-list-item-title router-link="/">Home</v-list-item-title>
