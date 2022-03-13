@@ -141,13 +141,15 @@
   import { mapGetters, mapActions } from 'vuex';
   export default {
     computed:{
-      ...mapGetters(["isLoggedIn"])
+        ...mapGetters(['isLoggedIn']),
+        ...mapGetters(['user'])
     },
-    methods: {
-      ...mapActions(["logout"]),
-      logoutUser(){
-        this.logout();
-      }
+    methods:{
+        ...mapActions(['getProfile']),
+        ...mapActions(['logout']),
+        logoutUser(){
+            this.logout();
+        }
     },
     data: () => ({ 
       drawer: null,

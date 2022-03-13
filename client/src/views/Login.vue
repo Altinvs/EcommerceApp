@@ -27,6 +27,7 @@
     </div>
 </template>
 
+
 <script>
 import { mapActions } from 'vuex';
     export default{
@@ -43,11 +44,12 @@ import { mapActions } from 'vuex';
                     username: this.username,
                     password: this.password
                 };
+                console.log(user);
                 this.login(user).then(res => {
                     if(res.data.success){
                         this.$router.push('/profile');
                     }
-                    // window.location.reload();
+                    window.location.reload();
                 }).catch(err => {
                     console.log(err);
                 });
