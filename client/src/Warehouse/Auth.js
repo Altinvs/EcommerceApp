@@ -42,8 +42,16 @@ const actions = {
             commit('register_success')
         }
         return res;
-    }
+    },
 
+    //logout
+    async logout({commit}){
+        await localStorage.removeItem('token');
+        commit('logout');
+        delete axios.defaults.headers.common['Authorization'];
+        router.push('/login');
+        return
+    }
 };
 
 const mutations = {
