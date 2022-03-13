@@ -30,6 +30,18 @@ const actions = {
             commit('auth_success', token, user);
         }
         return res;
+    },
+
+    //register
+    async register({
+        commit
+    }, userData){
+        commit('register_request');
+        let res = await axios.post('http://localhost:5000/api/users/register', userData);
+        if(res.data.success !== undefined){
+            commit('register_success')
+        }
+        return res;
     }
 
 };
@@ -42,6 +54,12 @@ const mutations = {
         state.token = token
         state.user = user
         state.status = 'success'
+    },
+    register_request(state){
+        state.status = 'loading'
+    },
+    register_success(state){
+        state.satatus = 'success'
     }
 };
 

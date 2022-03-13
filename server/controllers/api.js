@@ -31,7 +31,6 @@ module.exports = class API {
             res.status(201).json({message: 'Post created successfullly'})
         } catch (err) {
             res.status(400).json({message: err.message})
-            
         }
     }
     // Update a post

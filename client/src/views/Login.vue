@@ -47,7 +47,7 @@ import { mapActions } from 'vuex';
                     if(res.data.success){
                         this.$router.push('/profile');
                     }
-                    window.location.reload();
+                    // window.location.reload();
                 }).catch(err => {
                     console.log(err);
                 });
