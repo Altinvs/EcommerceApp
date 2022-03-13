@@ -43,7 +43,7 @@
         </v-list-item>
       </router-link>
 
-      <router-link to="/contact-us" style="text-decoration: none; color: inherit;">
+      <router-link v-if="isLoggedIn" to="/contact-us" style="text-decoration: none; color: inherit;">
         <v-list-item>
           <v-list-item-icon>
             <v-icon>mdi-application-edit-outline</v-icon>
@@ -54,7 +54,7 @@
         </v-list-item>
       </router-link>
 
-      <router-link to="/profile" style="text-decoration: none; color: inherit;">
+      <router-link v-if="isLoggedIn" to="/profile" style="text-decoration: none; color: inherit;">
         <v-list-item>
           <v-list-item-icon>
             <v-icon>mdi-account-details</v-icon>
@@ -65,7 +65,7 @@
         </v-list-item>
       </router-link>
 
-      <router-link to="/add-post" style="text-decoration: none; color: inherit;">
+      <router-link v-if="isLoggedIn" to="/add-post" style="text-decoration: none; color: inherit;">
         <v-list-item>
           <v-list-item-icon>
             <v-icon>mdi-note-plus</v-icon>
@@ -76,7 +76,7 @@
         </v-list-item>
       </router-link>
 
-      <router-link to="/dashboard" style="text-decoration: none; color: inherit;">
+      <router-link v-if="isLoggedIn" to="/dashboard" style="text-decoration: none; color: inherit;">
         <v-list-item>
           <v-list-item-icon>
             <v-icon>mdi-application</v-icon>
@@ -87,7 +87,7 @@
         </v-list-item>
       </router-link>
 
-      <router-link to="/register" style="text-decoration: none; color: inherit;">
+      <router-link v-if="!isLoggedIn" to="/register" style="text-decoration: none; color: inherit;">
         <v-list-item>
           <v-list-item-icon>
             <v-icon>mdi-account</v-icon>
@@ -98,7 +98,7 @@
         </v-list-item>
       </router-link>
 
-      <router-link to="/login" style="text-decoration: none; color: inherit;">
+      <router-link v-if="!isLoggedIn" to="/login" style="text-decoration: none; color: inherit;">
         <v-list-item>
           <v-list-item-icon>
             <v-icon>mdi-account</v-icon>
@@ -109,7 +109,7 @@
         </v-list-item>
       </router-link>
 
-      <router-link to="/logout"  style="text-decoration: none; color: inherit;">
+      <router-link v-if="isLoggedIn" to="/logout"  style="text-decoration: none; color: inherit;">
         <v-list-item @click.prevent="logoutUser">
           <v-list-item-icon>
             <v-icon>mdi-account-off</v-icon>
@@ -138,13 +138,21 @@
 </template>
 
 <script>
+  import { mapGetters } from 'vuex';
   export default {
+    computed:{
+      ...mapGetters(["isLoggedIn"])
+    },
     data: () => ({ 
       drawer: null,
       items: [
         { title: 'Home', icon: 'mdi-home', link: "/" },
         { title: 'Add Post', icon: 'mdi-note-plus', link: "/add-post" },
         { title: 'About', icon: 'mdi-help-box', link: "/about" },
+        { title: 'Profile', icon: 'mdi-account-details', link:"/profile" },
+        { title: 'Dashboard', icon: 'mdi-application', link:"/dashboard" },
+        { title: 'Login', icon: 'mdi-account', link:"/login" },
+        { title: 'Logout', icon: 'mdi-account-off', link:"/logout" },
       ],
     }),
   }
