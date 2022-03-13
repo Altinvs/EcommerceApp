@@ -3,6 +3,8 @@
     <v-navigation-drawer
       v-model="drawer"
       app
+      dark
+      src="https://cdn.vuetifyjs.com/images/backgrounds/bg-2.jpg"
     >
       <v-list-item>
         <v-list-item-content>
@@ -33,6 +35,7 @@
       </v-list-item-group>
     </v-list>
     </v-navigation-drawer>
+    </v-card>
 
     <v-app-bar app>
       <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
