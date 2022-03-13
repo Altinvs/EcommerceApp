@@ -12,6 +12,10 @@ const UserSchema = new Schema({
         type: String,
         required: true
     },
+    role: {
+        type: String,
+        default: "user"
+    },
     email:{
         type:String,
         required: true

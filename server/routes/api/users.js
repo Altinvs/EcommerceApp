@@ -15,7 +15,8 @@ router.post('/register', (req, res) =>{
          username,
          email,
          password,
-         confirm_password
+         confirm_password,
+         role
          } = req.body
 
     if(password !== confirm_password){
@@ -45,7 +46,8 @@ router.post('/register', (req, res) =>{
         name,
         username,
         password,
-        email
+        email,
+        role
     });
 
     //Hashing password
@@ -85,7 +87,8 @@ router.post('/login', (req, res) => {
                     _id: user._id,
                     username: user.username,
                     name: user.name,
-                    email: user.email
+                    email: user.email,
+                    role: user.role
                 }
                 jwt.sign(payload, key, { 
                     expiresIn: 604800

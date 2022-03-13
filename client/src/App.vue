@@ -65,7 +65,7 @@
         </v-list-item>
       </router-link>
 
-      <router-link v-if="isLoggedIn" to="/add-post" style="text-decoration: none; color: inherit;">
+      <router-link v-if="isLoggedIn && user.role === 'admin'" to="/add-post" style="text-decoration: none; color: inherit;">
         <v-list-item>
           <v-list-item-icon>
             <v-icon>mdi-note-plus</v-icon>
@@ -76,7 +76,7 @@
         </v-list-item>
       </router-link>
 
-      <router-link v-if="isLoggedIn" to="/dashboard" style="text-decoration: none; color: inherit;">
+      <router-link v-if="isLoggedIn && user.role === 'admin'" to="/dashboard" style="text-decoration: none; color: inherit;">
         <v-list-item>
           <v-list-item-icon>
             <v-icon>mdi-application</v-icon>
