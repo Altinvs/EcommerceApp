@@ -43,17 +43,6 @@
         </v-list-item>
       </router-link>
 
-      <router-link v-if="isLoggedIn" to="/contact-us" style="text-decoration: none; color: inherit;">
-        <v-list-item>
-          <v-list-item-icon>
-            <v-icon>mdi-application-edit-outline</v-icon>
-          </v-list-item-icon>
-          <v-list-item-content>
-            <v-list-item-title>Contact Us</v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
-      </router-link>
-
       <router-link v-if="isLoggedIn" to="/profile" style="text-decoration: none; color: inherit;">
         <v-list-item>
           <v-list-item-icon>

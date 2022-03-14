@@ -2,9 +2,9 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import AddPost from '../views/AddPost'
 import Post from '../views/Post.vue';
+import Dashboard from '../views/Dashboard.vue';
 import EditPost from '../views/EditPost.vue';
 import Home from '../views/Home'
-import About from '../views/About'
 import store from '../Store/store'
 import Checkout from '../views/Checkout'
 
@@ -15,11 +15,6 @@ const routes = [
     path: '/',
     name: 'home',
     component: Home,
-  },
-  {
-    path: '/about',
-    name: 'about',
-    component: About,
   },
   {
     path: '/post/:id',
@@ -56,6 +51,14 @@ const routes = [
     path: '/profile',
     name: 'profile',
     component: () => import('../views/Profile.vue'),
+    meta: {
+      requiresAuth: true
+    }
+  },
+  {
+    path: '/dashboard',
+    name: 'dashboard',
+    component: () => import('../views/Dashboard.vue'),
     meta: {
       requiresAuth: true
     }

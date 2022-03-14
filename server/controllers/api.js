@@ -1,6 +1,6 @@
 const Post = require("../models/posts")
 const fs = require("fs")
-const User = require('../model/User');
+const User = require('../models/User');
 
 module.exports = class API {
     // fetch all posts
@@ -75,9 +75,6 @@ module.exports = class API {
             res.status(404).json({ message: err.message})
         }
     }
-
-
-
 
     static async fetchAllUser(req, res){
         try{

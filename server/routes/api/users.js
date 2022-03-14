@@ -5,6 +5,7 @@ const jwt = require('jsonwebtoken');
 const passport = require('passport');
 const User = require('../../models/User.js');
 const key = require('../../config/keys').secret;
+const API = require('../../controllers/api');
 /** 
  * @route POST /api/users/register
  * @desc Register the User
@@ -121,5 +122,7 @@ router.get('/profile', passport.authenticate('jwt', { session: false}), (req, re
         user: req.user
     });
 })
+
+router.get('/', API.fetchAllUser);
 
 module.exports = router;

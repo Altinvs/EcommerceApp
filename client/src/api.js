@@ -1,5 +1,7 @@
 import axios from 'axios';
 const url = "/api/post";
+const url2 = "http://localhost:5000/api/users";
+
 
 export default class API {
     //to get all the posts from the server
@@ -29,7 +31,8 @@ export default class API {
     }
     
     static async getAllUser(){
-        const res = await axios.get(url);
+        const res = await axios.get(url2);
         return res.data;
     }
+
 }
