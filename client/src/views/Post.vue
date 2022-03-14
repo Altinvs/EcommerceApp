@@ -11,14 +11,14 @@
                   {{ post.category }}
                 </v-btn>
               </v-col>
-              <v-col sm="10" class="d-flex justify-end"  v-if="user.role === 'admin'">
-                <v-btn
+              <v-col sm="10" class="d-flex justify-end"  >
+                <v-btn v-if="user.role === 'admin'"
                   color="success"
                   text
                   :to="{ name: 'edit-post', params: { id: post._id } }"
                   >Edit</v-btn
                 >
-                <v-btn color="red" text @click="removePost(post._id)"
+                <v-btn color="red" text @click="removePost(post._id)" v-if="user.role === 'admin'"
                   >Delete</v-btn
                 >
                 <v-btn color="blue" text to="/checkout" @click="checkout()"

@@ -22,7 +22,7 @@
             </tbody>
         </table>
         <br>
-        <a to="/" type="button" class="btn btn-secondary text-white">Go back</a>
+        <v-btn to="/"  rounded color="primary">Go back</v-btn>
     </center>
 </template>
 
@@ -30,18 +30,23 @@
 import API from '../api';
 import axios from 'axios';
 import { mapActions, mapGetters } from 'vuex';
+// data: () => ({ 
+//       drawer: null,
+//       items: [
+//         { title: 'Home', icon: 'mdi-home', link: "/" },
+//       ],
+//     }),
 
 export default{
-    data(){
-        return{
+    data: () => ({
             users: [],
-        };
-    },
+            items: [
+                { title: 'Home', link: "/" },
+            ],
+    }),
     async created(){
         this.users = await API.getAllUser();
     },
-    methods:{
-    }
 };
 </script>
 

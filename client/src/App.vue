@@ -32,17 +32,6 @@
         </v-list-item>
       </router-link>  
 
-      <router-link to="/about" style="text-decoration: none; color: inherit;">
-        <v-list-item>
-          <v-list-item-icon>
-            <v-icon>mdi-help-box</v-icon>
-          </v-list-item-icon>
-          <v-list-item-content>
-            <v-list-item-title>About</v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
-      </router-link>
-
       <router-link v-if="isLoggedIn" to="/profile" style="text-decoration: none; color: inherit;">
         <v-list-item>
           <v-list-item-icon>
@@ -145,7 +134,6 @@
       items: [
         { title: 'Home', icon: 'mdi-home', link: "/" },
         { title: 'Add Post', icon: 'mdi-note-plus', link: "/add-post" },
-        { title: 'About', icon: 'mdi-help-box', link: "/about" },
         { title: 'Profile', icon: 'mdi-account-details', link:"/profile" },
         { title: 'Dashboard', icon: 'mdi-application', link:"/dashboard" },
         { title: 'Login', icon: 'mdi-account', link:"/login" },
