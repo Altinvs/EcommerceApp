@@ -27,4 +27,9 @@ export default class API {
         const res = await axios.delete(`${url}/${id}`);
         return res.data;
     }
+    
+    static async getAllUser(){
+        const res = await axios.get(url);
+        return res.data;
+    }
 }

@@ -6,6 +6,7 @@ import EditPost from '../views/EditPost.vue';
 import Home from '../views/Home'
 import About from '../views/About'
 import store from '../Store/store'
+import Checkout from '../views/Checkout'
 
 Vue.use(VueRouter)
 
@@ -59,6 +60,11 @@ const routes = [
       requiresAuth: true
     }
   },
+  {
+    path: '/checkout',
+    name: 'checkout',
+    component: Checkout,
+  }
 ]
 
 

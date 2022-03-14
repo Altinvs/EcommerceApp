@@ -11,7 +11,7 @@
                   {{ post.category }}
                 </v-btn>
               </v-col>
-              <v-col sm="10" class="d-flex justify-end">
+              <v-col sm="10" class="d-flex justify-end"  v-if="user.role === 'admin'">
                 <v-btn
                   color="success"
                   text
@@ -21,6 +21,10 @@
                 <v-btn color="red" text @click="removePost(post._id)"
                   >Delete</v-btn
                 >
+                <v-btn color="blue" text to="/checkout" @click="checkout()"
+                  >Buy</v-btn
+                >
+                
               </v-col>
             </v-row>
           </v-card-actions>
@@ -38,11 +42,13 @@
 </template>
 
 <script>
+  import { mapGetters } from 'vuex';
 import API from "../api";
 export default {
   data() {
     return {
       post: {},
+      title: 'Checkout', link:"/checkout"
     };
   },
   async created() {
@@ -57,6 +63,14 @@ export default {
         params: { message: response.message },
       });
     },
+    checkout(e) {
+        e.preventDefault();
+        this.$router.push({ name: 'checkout' });
+    }
   },
+  computed:{
+        ...mapGetters(['user'])
+  },
+  
 };
 </script>
