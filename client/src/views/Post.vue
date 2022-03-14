@@ -29,7 +29,7 @@
           </v-card-subtitle>
           <v-card-text class="grey--text">
             <p>{{ post.content }}</p>
-            <p>{{ post.created }}</p>
+            <p>Price: {{ post.price }}</p>
           </v-card-text>
         </v-card>
       </v-col>

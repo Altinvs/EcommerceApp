@@ -18,6 +18,12 @@
               :rules="rules"
             ></v-text-field>
             <v-text-field
+              v-model="post.price"
+              label="Price"
+              prepend-icon="mdi-note"
+              :rules="rules"
+            ></v-text-field>
+            <v-text-field
               v-model="post.category"
               label="Category"
               prepend-icon="mdi-view-list"
@@ -54,6 +60,7 @@ export default {
       rules: [(value) => !!value || "This field is required"],
       post: {
         title: "",
+        price: "",
         category: "",
         content: "",
         image: "",
@@ -73,6 +80,7 @@ export default {
       const formData = new FormData();
       formData.append("image", this.image);
       formData.append("title", this.post.title);
+      formData.append("price", this.post.price);
       formData.append("category", this.post.category);
       formData.append("content", this.post.content);
       formData.append("old_image", this.post.image);

@@ -21,6 +21,9 @@
             {{ post.title }}
           </v-card-title>
           <v-card-text class="py-0">
+            Price: {{ post.price }}
+          </v-card-text>
+          <v-card-text class="py-0">
             <p>{{ post.content.substring(0, 100) + "..." }}</p>
           </v-card-text>
         </v-card>
